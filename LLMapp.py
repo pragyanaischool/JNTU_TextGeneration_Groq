@@ -9,7 +9,7 @@ groq_api_key = st.sidebar.text_input("Groq API Key", type="password")
 def generate_response(input_text):
     model = ChatGroq(model_name="llama-3.3-70b-versatile", temperature=0.7, api_key=groq_api_key)
     response = model.invoke(input_text)
-    st.info(response['content'])
+    st.info(response)
 
 
 with st.form("my_form"):
