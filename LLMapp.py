@@ -2,7 +2,7 @@ import streamlit as st
 from langchain_groq import ChatGroq
 
 st.title("🤖 Groq-Powered Chatbot")
-
+st.image("PragyanAI_Transperent_github.png")
 groq_api_key = st.sidebar.text_input("Groq API Key", type="password")
 
 
