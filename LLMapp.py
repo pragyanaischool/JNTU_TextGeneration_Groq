@@ -17,7 +17,7 @@ with st.form("my_form"):
         "What are the three key pieces of advice for learning how to code?",
     )
     submitted = st.form_submit_button("Submit")
-    if not groq_api_key.startswith("gk-"):
+    if not groq_api_key.startswith("gsk-"):
         st.warning("Please enter your Groq API key!", icon="⚠")
     if submitted and groq_api_key.startswith("gk-"):
         generate_response(text)
