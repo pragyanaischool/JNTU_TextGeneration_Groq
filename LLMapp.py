@@ -20,4 +20,4 @@ with st.form("my_form"):
     if not groq_api_key.startswith("gsk_"):
         st.warning("Please enter your Groq API key!", icon="⚠")
     if submitted and groq_api_key.startswith("gsk_"):
-        generate_response(text['content'])
+        generate_response(text.content[0])
