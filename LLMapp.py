@@ -8,7 +8,7 @@ groq_api_key = st.sidebar.text_input("Groq API Key", type="password")
 
 def generate_response(input_text):
     model = ChatGroq(model_name="llama-3.3-70b-versatile", temperature=0.7, api_key=groq_api_key)
-    st.info(model.invoke(input_text))
+    st.info(model.invoke(input_text).context[0])
 
 
 with st.form("my_form"):
@@ -20,4 +20,4 @@ with st.form("my_form"):
     if not groq_api_key.startswith("gsk_"):
         st.warning("Please enter your Groq API key!", icon="⚠")
     if submitted and groq_api_key.startswith("gsk_"):
-        generate_response(text.content)
+        generate_response(text)
